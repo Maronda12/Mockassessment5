@@ -1,0 +1,49 @@
+﻿
+
+@model Calc 
+
+
+@{ ViewData["Title"] = "Calculator Form";
+}
+
+<h4>Calculator Form</h4>
+<br />
+
+<form method="post" action="displayform">
+
+
+
+    <label asp-for="num1">Number1:</label>
+    <input type="number" name="num1" value="@Model.num1" />
+    <br>
+
+    <label asp-for="num2">Number2:</label>
+    <input type="text" name="num2" value="@Model.num2" />
+    <br>
+
+    <label asp-for="operation">Operation:</label>
+    <br>
+
+    <input type="radio" name="operation" value="Plus" />
+    <label for="Plus">Plus</label>
+    <br>
+
+    <input type="radio" name="operation" value="Minus" />
+    <label for="Minus">Minus</label>
+    <br>
+
+    <input type="radio" name="operation" value="Multiply" />
+    <label for="Multiply">Multiply</label>
+    <br>
+
+    <input type="radio" name="operation" value="Divide" />
+    <label for="Divide">Divide</label>
+    <br>
+
+    <input type="button" value="Submit" />
+
+
+
+
+
+</form>
