@@ -7,29 +7,58 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+
 namespace Assessment5a.Controllers
 {
     public class HomeController : Controller
     {
-        
-        public IActionResult Calculator()
-        {
-            return View(new Calc());
-        }
+        private readonly ILogger<HomeController> _logger;
 
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Result()
+        public IActionResult Calculator()
         {
             return View();
         }
 
 
-        public IActionResult Privacy()
+        //#2 Result Action-take in 3 parameters below
+        //Do calculations using 2 nums & store result in ViewBag.Result, operations in ViewBag.Operation
+        public IActionResult Result(int num1, int num2, string operation)
+        {
+            ViewBag.Operation = operation;
+           
+
+            if (operation == "Plus")
+            {
+                ViewBag.result = num1 + num2;
+            }
+            else if (operation == "Minus")
+            {
+                ViewBag.result = num1 - num2;
+            }
+            else if (operation == "Multiply")
+            {
+                ViewBag.result = num1 * num2;
+            }
+            else if (operation == "Divide")
+            {
+                ViewBag.result = num1 % num2;
+            }
+            
+            return View();
+        }
+
+            public IActionResult Privacy()
         {
             return View();
         }

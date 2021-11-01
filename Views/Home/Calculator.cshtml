@@ -1,27 +1,28 @@
-﻿
-
-@model Calc 
+﻿@model Assessment5a.Models.Calculator
 
 
-@{ ViewData["Title"] = "Calculator Form";
+
+@{ ViewData["Title"] = "Calculator";
 }
 
 <h4>Calculator Form</h4>
 <br />
 
-<form method="post" action="displayform">
+<form action="result">
 
 
+    @* 2 number inputs with name num1, & num2 *@
 
-    <label asp-for="num1">Number1:</label>
-    <input type="number" name="num1" value="@Model.num1" />
+    Number1:
+    <input type="number" name="num1" />
+    <br>
+    Number2:
+    <input type="number" name="num2" />
     <br>
 
-    <label asp-for="num2">Number2:</label>
-    <input type="text" name="num2" value="@Model.num2" />
-    <br>
 
-    <label asp-for="operation">Operation:</label>
+    @* A set of radio buttons with the name operation & the following values: *@
+    Operation:
     <br>
 
     <input type="radio" name="operation" value="Plus" />
@@ -40,9 +41,8 @@
     <label for="Divide">Divide</label>
     <br>
 
+    @* A submit button *@
     <input type="button" value="Submit" />
-
-
 
 
 
